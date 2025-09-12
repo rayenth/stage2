@@ -1,0 +1,41 @@
+🛑 Problem
+Health insurance companies need to pay medical bills for their clients while keeping their finances stable.
+If they miscalculate, they might:
+
+Lose money (too many claims vs. premiums).
+
+Set premiums too high (lose clients).
+
+The difficulty:
+
+Medical costs can change suddenly.
+
+New rules (like covering new treatments) can increase costs.
+
+Without good forecasting, they risk financial instability.
+
+🎯 Goal of the Project
+Build a system that:
+
+Predicts future medical expenses.
+
+Simulates how changes in coverage rules will affect costs.
+
+Helps decision-makers choose the best policies to stay profitable.
+
+📋 Your Job
+Collect & prepare data (medical history, client profiles, benefit rules).
+
+Train multiple models (regression, decision trees, XGBoost, LSTM, etc.).
+
+Compare models and pick the most accurate.
+
+Create a simulation tool (dashboard/API) where the user can:
+
+Enter changes in coverage.
+
+Instantly see the predicted financial impact.
+
+Deliver a report & present results to the technical team.
+
+

@@ -1,0 +1,63 @@
+┌───────────────────────────────────────────────────────────────────────┐
+│                📊 Health Consumption Prediction Project               │
+└───────────────────────────────────────────────────────────────────────┘
+
+1️⃣ Data Collection
+   ┌─────────────────────────────────────────────────────────────┐
+   │ - Gather historical data: medical consumption, insured       │
+   │   profiles, benefits tables, etc.                            │
+   └─────────────────────────────────────────────────────────────┘
+   ↳ Matches: "Collecte des données historiques"
+
+2️⃣ Data Cleaning & Anonymization
+   ┌─────────────────────────────────────────────────────────────┐
+   │ - Remove duplicates, fix errors                              │
+   │ - Anonymize sensitive information                            │
+   │ - Prepare for modeling                                       │
+   └─────────────────────────────────────────────────────────────┘
+   ↳ Matches: "Nettoyage et anonymisation des données"
+
+3️⃣ Feature Engineering
+   ┌─────────────────────────────────────────────────────────────┐
+   │ - Create variables from benefits table changes               │
+   │ - Transform raw data into model-friendly format              │
+   └─────────────────────────────────────────────────────────────┘
+   ↳ Matches: "Modélisation des variables explicatives"
+
+4️⃣ Model Training & Comparison
+   ┌─────────────────────────────────────────────────────────────┐
+   │ - Train multiple algorithms (Regression, Decision Trees,     │
+   │   XGBoost, LSTM, etc.)                                        │
+   │ - Compare performance metrics                                │
+   └─────────────────────────────────────────────────────────────┘
+   ↳ Matches: "Entraînement et comparaison de modèles prédictifs"
+
+5️⃣ Scenario Simulation
+   ┌─────────────────────────────────────────────────────────────┐
+   │ - Test “before/after” scenarios when benefits table changes  │
+   │ - Measure predicted impact                                   │
+   └─────────────────────────────────────────────────────────────┘
+   ↳ Matches: "Simulation de scénarios"
+
+6️⃣ Best Model Selection
+   ┌─────────────────────────────────────────────────────────────┐
+   │ - Pick the most accurate and robust model                    │
+   │ - Validate with historical and test data                     │
+   └─────────────────────────────────────────────────────────────┘
+   ↳ Matches: "Évaluation de la performance et robustesse"
+
+7️⃣ Interactive Tool / Deployment
+   ┌─────────────────────────────────────────────────────────────┐
+   │ Option A (on-demand): Dashboard/API where user enters data → │
+   │           Preprocess → Predict → Show results instantly      │
+   │ Option B (background): Continuous pipeline updating          │
+   │           preprocessed data & serving predictions instantly  │
+   └─────────────────────────────────────────────────────────────┘
+   ↳ Matches: "Restitution via dashboard/API"
+
+8️⃣ Final Report & Presentation
+   ┌─────────────────────────────────────────────────────────────┐
+   │ - Document methods, results, simulations, and usage          │
+   │ - Present deliverables to technical management               │
+   └─────────────────────────────────────────────────────────────┘
+   ↳ Matches: "Rapport final et présentation"

@@ -1,0 +1,44 @@
+# Maven target folder
+target/
+
+# Logs
+*.log
+
+# IDE configs (IntelliJ, Eclipse, VSCode, etc.)
+*.iml
+.idea/
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+#now the react part 
+
+# dependencies
+/node_modules
+
+# build output
+/build
+/dist
+
+# misc
+.DS_Store
+*.log
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# editor configs
+.vscode/
+.idea/
+*.iml
+

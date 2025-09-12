@@ -1,0 +1,181 @@
+{
+  "main": {
+    "id": "fed82e8c68012e8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "2191e232cd2cf673",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "09a7f87308e54516",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "plan.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "plan"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5d268b5ac55b708d",
+    "type": "split",
+    "children": [
+      {
+        "id": "231d87f5d07e1771",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "876c103a4199b3ea",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "4402bfddcb7c3a02",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "764781877a14e113",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3048de0b486c7849",
+    "type": "split",
+    "children": [
+      {
+        "id": "0f7e3e13602bfcd6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "de5fc4efa862056a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "iam system.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for iam system"
+            }
+          },
+          {
+            "id": "c2461df864a9b17b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "iam system.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from iam system"
+            }
+          },
+          {
+            "id": "d15c0144019f48ae",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b54adba6ac294e3b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "iam system.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of iam system"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "09a7f87308e54516",
+  "lastOpenFiles": [
+    "web interface.md",
+    "plan.md",
+    "ai backend.md",
+    "mail requirement.md",
+    "iam system.md",
+    "the first step is to make the iam system to do the intrerprise grade job.md"
+  ]
+}
