@@ -1,0 +1,68 @@
+# main.py
+import pandas as pd
+
+
+from database_connector import DatabaseConnector
+from trainers.training_lineair_regression_incrimental import LinearModelTrainerIncremental
+
+# -------------------------
+# Database setup
+# -------------------------
+db = DatabaseConnector(
+    host="localhost",
+    user="your_user",
+    password="your_pass",
+    database="insurance_db"
+)
+
+query = """
+    SELECT company_size, industry, annual_revenue, past_claims_count, new_safety_rule, expected_claim, risk 
+    FROM companies
+"""
+
+target_columns = ['expected_claim', 'risk']
+
+# -------------------------
+# Initialize incremental trainer
+# -------------------------
+trainer = LinearModelTrainerIncremental(scale=True)
+
+first_chunk = True
+chunksize = 5000  # adjust based on your RAM
+
+# -------------------------
+# Train incrementally
+# -------------------------
+for chunk in db.fetch_in_chunks(query, chunksize=chunksize):
+    X = chunk.drop(columns=target_columns)
+    y = chunk[target_columns] if len(target_columns) > 1 else chunk[target_columns[0]]
+    trainer.partial_fit(X, y, fit_scaler=first_chunk)
+    first_chunk = False  # fit scaler only on the first chunk
+
+db.close()
+
+# -------------------------
+# Example prediction on new data (can also be a chunk)
+# -------------------------
+new_data_query = """
+    SELECT company_size, industry, annual_revenue, past_claims_count, new_safety_rule
+    FROM companies
+    WHERE id IN (101, 102, 103)
+"""
+db.connect()
+new_chunk = db.fetch_data(new_data_query)
+db.close()
+
+predictions = trainer.predict(new_chunk)
+print("Predictions on new companies:")
+print(predictions)
+
+# -------------------------
+# Show coefficients
+# -------------------------
+print("\nFeature Coefficients:")
+coef_dict = trainer.get_coefficients(target_columns)
+for target, coefs in coef_dict.items():
+    print(f"\n{target}:")
+    for feat, coef in coefs.items():
+        print(f"  {feat}: {coef:.4f}")
