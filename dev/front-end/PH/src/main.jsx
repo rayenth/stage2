@@ -1,10 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './pages/App.jsx'
+
+import App from './App.jsx'
+
 import ChatBox from './components/chat_interface.jsx'
-import SidePanel from './components/side_bar.jsx'
- 
+import CollapsibleSidePanel from './components/side_bar_2.jsx'
+import RuleSetPanel  from './components/rulesetpanel.jsx'
 
 // In your login page
 
@@ -12,8 +14,8 @@ import SidePanel from './components/side_bar.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
   <>
-   <SidePanel></SidePanel>
-   <ChatBox></ChatBox>  
+    <App />
+
   </>
   </StrictMode>,
 )

@@ -1,64 +1,21 @@
-import { Box, Typography, TextField, Button } from "@mui/material";
-import LoginImage from "./assets/adventure-time-finn-and-jake-s-treehouse-9vl8l9a058e110hu.jpg";
+import React, { useState } from "react";
+import { Box, IconButton, Grow } from "@mui/material";
+import BalanceIcon from "@mui/icons-material/Balance";
+
+import CollapsibleSidePanel from "./components/side_bar_2.jsx";
+import ChatBox from "./components/chat_interface.jsx";
+import RuleSetPanel from "./components/rulesetpanel.jsx"; 
 
 export default function App() {
-  return (
-    <Box
-      sx={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        bgcolor: "lightblue",
-        
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          bgcolor: "white",
-          borderRadius: 2,
-          boxShadow: 3,
-          m: 8,  // margin around main box
-        }}
-      >
-        {/* Login form */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-            minWidth: 300,
-            p: 4,
-          }}
-        >
-          <Typography variant="h4">Login</Typography>
-          <TextField label="Username" variant="outlined" fullWidth />
-          <TextField label="Password" type="password" variant="outlined" fullWidth />
-          <Button variant="contained" color="primary">
-            Submit
-          </Button>
-        </Box>
 
-        {/* Image */}
-        <Box
-          component="img"
-          src={LoginImage}
-          alt="Login illustration"
-          sx={{
-            height: "100%",        // match the height of the login form
-            maxHeight: "100%",     // prevents it from overflowing
-            width: "auto",
-            borderTopRightRadius: 8,
-            borderBottomRightRadius: 8,
-          }}
-        />
-      </Box>
-    </Box>
+
+  return (
+
+
+    <>
+      <ChatBox></ChatBox>  
+      <CollapsibleSidePanel></CollapsibleSidePanel>
+      <RuleSetPanel></RuleSetPanel>
+    </>
   );
 }
