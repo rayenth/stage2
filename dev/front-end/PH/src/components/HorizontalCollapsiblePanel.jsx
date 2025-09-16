@@ -1,22 +1,26 @@
 import React, { useState } from "react";
-import {
-  Paper,
-  Box,
-  Typography,
-  Button,
-  IconButton,
-} from "@mui/material";
+import { Paper, Box, IconButton, Typography } from "@mui/material";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import ExpandLess from "@mui/icons-material/ExpandLess";
+import MainPanel from "./MainPanel.jsx";
+import RuleSetPanel from "./RuleSetPanel.jsx";
 
 export default function HorizontalCollapsiblePanel() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [viewMode, setViewMode] = useState("main");
 
   const collapsedHeight = 60;
 
   const togglePanel = () => {
     setIsExpanded(!isExpanded);
+    if (isExpanded) {
+      setViewMode("main");
+    }
   };
+  
+  const handleViewRulesetsClick = () => setViewMode("rulesets_list");
+  const handleCreateRulesetClick = () => setViewMode("create_ruleset");
+  const handleBackClick = () => setViewMode("main");
 
   return (
     <Paper
@@ -27,7 +31,7 @@ export default function HorizontalCollapsiblePanel() {
         transform: "translateX(-50%)",
         position: "fixed",
         top: 0,
-        height: isExpanded ? "100vh" : collapsedHeight, 
+        height: isExpanded ? "100vh" : collapsedHeight,
         overflowY: isExpanded ? "auto" : "hidden",
         overflowX: "hidden",
         p: isExpanded ? 2 : 0,
@@ -35,40 +39,31 @@ export default function HorizontalCollapsiblePanel() {
         flexDirection: "row",
         alignItems: "flex-start",
         justifyContent: "space-between",
-        transition: "height 0.3s ease-in-out", 
+        transition: "height 0.3s ease-in-out",
         borderRadius: 2,
         zIndex: 100,
       }}
     >
-      {/* Content box */}
       <Box sx={{
         display: "flex",
         flexDirection: "column",
-        flexGrow: 1, // Allows this box to take up the remaining space
+        flexGrow: 1,
       }}>
-        
-        
-        {isExpanded && (
-          <Box sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-            p: 2,
-            alignItems: "flex-start",
-          }}>
-            <Button variant="contained" color="primary">
-              create ruleset
-            </Button>
-            <Button variant="outlined">
-              view rulesets
-            </Button>
-            
-          </Box>
+        {isExpanded && viewMode === "main" && (
+          <MainPanel 
+            onViewRulesetsClick={handleViewRulesetsClick} 
+            onCreateRulesetClick={handleCreateRulesetClick}
+          />
         )}
 
-        {/*
-          This text is visible when the panel is COLLAPSED
-        */}
+        {isExpanded && (viewMode === "rulesets_list" || viewMode === "create_ruleset") && (
+          // Pass `isSelectable` prop to control checkboxes and button
+          <RuleSetPanel
+            onBackClick={handleBackClick} 
+            isSelectable={viewMode === "create_ruleset"}
+          />
+        )}
+        
         {!isExpanded && (
           <Box sx={{
             display: 'flex',
@@ -85,7 +80,6 @@ export default function HorizontalCollapsiblePanel() {
         )}
       </Box>
 
-      {/* Toggle Button */}
       <Box sx={{ position: "absolute", top: 0, right: 0, p: 1 }}>
         <IconButton onClick={togglePanel} sx={{ p: 1 }}>
           {isExpanded ? <ExpandLess /> : <ExpandMore />}

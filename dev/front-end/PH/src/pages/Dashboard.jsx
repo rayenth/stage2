@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 import ChatBox from "../components/chat_interface2.jsx"
 import CollapsibleSidePanel from "../components/side_bar_2.jsx";
-import HorizontalCollapsiblePanel from "../components/rulesetpanel.jsx";
+import HorizontalCollapsiblePanel from "../components/HorizontalCollapsiblePanel.jsx";
 
 export default function Dashboard() {
     const { loginInProgress, logOut } = useContext(AuthContext);
