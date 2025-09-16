@@ -1,21 +1,14 @@
-import React, { useState } from "react";
-import { Box, IconButton, Grow } from "@mui/material";
-import BalanceIcon from "@mui/icons-material/Balance";
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-import CollapsibleSidePanel from "./components/side_bar_2.jsx";
-import ChatBox from "./components/chat_interface.jsx";
-import RuleSetPanel from "./components/rulesetpanel.jsx"; 
+import LogInPage from './pages/logInPage.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 
 export default function App() {
-
-
   return (
-
-
-    <>
-      <ChatBox></ChatBox>  
-      <CollapsibleSidePanel></CollapsibleSidePanel>
-      <RuleSetPanel></RuleSetPanel>
-    </>
+    <Routes>
+      <Route path="/" element={<LogInPage />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
   );
 }
