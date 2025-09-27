@@ -18,14 +18,14 @@ export default function ChatBox() {
 
     // Make the API call to your backend
     try {
-      const response = await fetch("http://localhost:3000/api/chat", {
+      const response = await fetch("http://localhost:9090/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           // Send the access token in the Authorization header
-          "Authorization": `Bearer ${token}`,
+          
         },
-        body: JSON.stringify({ message: userMessage.text }),
+        body: JSON.stringify({ prompt: userMessage.text }),
       });
 
       if (!response.ok) {
